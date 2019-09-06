@@ -8,6 +8,7 @@ before_script:
     - ./tests/utility_fuzzer_test -max_total_time=60
 
 arch:
-  image: "registry.gitlab.com/eidheim/docker-images:arch"
+  image: "archlinux/base"
+  <<: pacman -Suy --noconfirm && pacman -S --noconfirm cmake make gcc clang
   <<: *compile_and_test
 
