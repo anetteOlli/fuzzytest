@@ -1,6 +1,5 @@
 before_script:
   - mkdir build && cd build
-  - export CXXFLAGS=clang++
 
 .script: &compile_and_test
   script:
