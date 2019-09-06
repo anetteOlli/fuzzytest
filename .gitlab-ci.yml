@@ -5,3 +5,4 @@ before_script:
 tests:
   script:
     - ls
+    - cd build
