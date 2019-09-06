@@ -3,12 +3,12 @@ before_script:
 
 .script: &compile_and_test
   script:
+    - pacman -Suy --noconfirm && pacman -S --noconfirm cmake make gcc clang
     - CXX=clang++ cmake ..
     - make
     - ./tests/utility_fuzzer_test -max_total_time=60
 
 arch:
   image: "archlinux/base"
-  <<: pacman -Suy --noconfirm && pacman -S --noconfirm cmake make gcc clang
   <<: *compile_and_test
 
