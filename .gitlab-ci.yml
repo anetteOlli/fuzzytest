@@ -2,8 +2,13 @@ before_script:
   - mkdir build && cd build
   - export CXXFLAGS=clang++
 
-tests:
+tests: &wohoo
   script:
     - CXX=clang++ cmake ..
     - make
     - ./tests/utility_fuzzer_test -max_total_time=60
+
+arch:
+  image: "registry.gitlab.com/eidheim/docker-images:arch"
+  <<: *wohoo
+
