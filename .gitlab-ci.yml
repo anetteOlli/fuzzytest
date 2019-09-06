@@ -2,7 +2,7 @@ before_script:
   - mkdir build && cd build
   - export CXXFLAGS=clang++
 
-tests: &wohoo
+.script: &compile_and_test
   script:
     - CXX=clang++ cmake ..
     - make
@@ -10,5 +10,5 @@ tests: &wohoo
 
 arch:
   image: "registry.gitlab.com/eidheim/docker-images:arch"
-  <<: *wohoo
+  <<: *compile_and_test
 
