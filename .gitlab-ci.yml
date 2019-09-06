@@ -4,5 +4,6 @@ before_script:
 
 tests:
   script:
-    - ls
-    - cd build
+    - CXX=clang++ cmake ..
+    - make
+    - ./tests/utility_fuzzer_test -max_total_time=60
