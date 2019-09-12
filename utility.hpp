@@ -10,7 +10,7 @@ string convertString(string userString){
 
 
     for (int i = 0; i < userString.length(); i++){
-        if (newString.length() == newString.max_size()){
+        if (newString.length() >= newString.max_size()-5){
             break;
         }else {
             char index = userString.at(i);
